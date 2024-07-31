@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: deployment
+metadata:
+  name: complete-production-e2e-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: complete-production-e2e-deployment
+  template:
+    metadata:
+      labels:
+        app: complete-production-e2e-deployment
+    spec:
+      containers:
+        - name: complete-production-e2e-deployment
+          image: chaos662/complete-production-e2e-pipeline:1.0.0-27
