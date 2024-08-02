@@ -19,7 +19,7 @@ pipeline {
             }
         }
 
-        stage(Update the Deployment Tags) {
+        stage("Update the Deployment Tags") {
             steps {
                 sh """
                     cat deployment.yaml
