@@ -7,7 +7,7 @@ pipeline {
     }
 
     stages {
-        stage ("cleanup Workspace") {
+        stage ("Cleanup Workspace") {
             steps {
                 clearWS{}
             }
@@ -15,7 +15,7 @@ pipeline {
 
         stage("Checkout from SCM") {
             steps {
-                git branch: 'main', credentialsId: 'github', url: 'https://github.com/marcmcmillin/gitops-complete-production-e2e--pipeline.git'
+                git branch: 'main', credentialsId: 'github', url: 'https://github.com/marcmcmillin/gitops-complete-production-e2e--pipeline'
             }
         }
 
@@ -23,7 +23,7 @@ pipeline {
             steps {
                 sh """
                     cat deployment.yaml
-                    sed -i 's/$(APP_NAME).*/${APP_NAME}:${IMAGE_TAG}/g' deployment.yaml
+                    sed -i 's/${APP_NAME}.*/${APP_NAME}:${IMAGE_TAG}/g' deployment.yaml
                     cat deployment.yaml
                 """
             }
