@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: complete-production-e2e-app
-          image: chaos662/complete-production-e2e-pipeline:1.0.0-103
+          image: chaos662/complete-production-e2e-pipeline:1.0.0-104
           resources:
             limits:
               memory: "256Mi"
