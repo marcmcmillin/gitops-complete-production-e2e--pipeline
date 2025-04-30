@@ -18,13 +18,7 @@ pipeline {
                 git branch: 'main', credentialsId: 'github', url: 'https://github.com/marcmcmillin/gitops-complete-production-e2e--pipeline'
             }
         }
-
-        stage('Trivy Scan') {
-            steps {
-                sh "trivy image --timeout 15m chaos662/complete-production-e2e-pipeline:1.0.0-131"
-            }
-        }
-        
+      
         stage("Update the Deployment Tags") {
             steps {
                 sh """
