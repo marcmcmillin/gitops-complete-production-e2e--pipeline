@@ -19,7 +19,12 @@ pipeline {
             }
         }
 
-
+        stage('Trivy Scan') {
+            steps {
+                sh "trivy image --timeout 15m your-image:tag"
+            }
+        }
+        
         stage("Update the Deployment Tags") {
             steps {
                 sh """
