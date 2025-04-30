@@ -21,7 +21,7 @@ pipeline {
 
         stage('Trivy Scan') {
             steps {
-                sh "trivy image --timeout 15m your-image:tag"
+                sh "trivy image --timeout 15m chaos662/complete-production-e2e-pipeline:1.0.0-131"
             }
         }
         
