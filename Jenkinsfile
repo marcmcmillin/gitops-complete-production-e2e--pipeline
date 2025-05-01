@@ -4,6 +4,7 @@ pipeline {
     }
     environment {
         APP_NAME = "complete-production-e2e-pipeline"
+        TRIVY_TIMEOUT = '30m' // Example set timeout to 30 minutes
     }
 
     stages {
